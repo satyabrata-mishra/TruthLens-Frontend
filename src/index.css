@@ -358,8 +358,67 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Global overflow protection to prevent pinch zoom out empty space on mobile */
+html, body, #root {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Visibility helpers */
+.hide-mobile {
+  display: inline-block;
+}
+.show-mobile-only {
+  display: none;
+}
+
+/* Features section responsive grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+.features-card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  background: rgba(13, 16, 26, 0.4);
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
 /* Mobile Responsiveness Overrides */
 @media (max-width: 480px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  .show-mobile-only {
+    display: inline-block !important;
+  }
+  
+  /* Center feature cards content on mobile */
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .features-card {
+    padding: 20px !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .features-card-icon-wrapper {
+    margin: 0 auto !important;
+  }
+
   /* Reduce container paddings */
   section, footer, main {
     padding-left: 12px !important;

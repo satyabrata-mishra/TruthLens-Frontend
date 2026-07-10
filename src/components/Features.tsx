@@ -50,25 +50,13 @@ export const Features: React.FC = () => {
         </p>
       </div>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        gap: '20px',
-      }}>
+      <div className="features-grid">
         {list.map((f, i) => (
           <div 
             key={i} 
-            className="glass-panel" 
-            style={{
-              padding: '28px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '16px',
-              textAlign: 'left',
-              background: 'rgba(13, 16, 26, 0.4)',
-            }}
+            className="glass-panel features-card"
           >
-            <div style={{
+            <div className="features-card-icon-wrapper" style={{
               background: 'rgba(255, 255, 255, 0.03)',
               border: '1px solid rgba(255, 255, 255, 0.06)',
               padding: '12px',

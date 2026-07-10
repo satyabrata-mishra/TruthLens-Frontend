@@ -10,20 +10,7 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onHistoryClick, historyCount, onReset, onVerifyClick }) => {
   return (
-    <nav className="glass-panel" style={{
-      position: 'sticky',
-      top: 0,
-      zIndex: 100,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: '16px 24px',
-      margin: '16px 16px 0 16px',
-      borderRadius: '16px',
-      border: '1px solid rgba(255, 255, 255, 0.08)',
-      background: 'rgba(10, 11, 16, 0.7)',
-      backdropFilter: 'blur(12px)',
-    }}>
+    <nav className="glass-panel app-navbar">
       <div 
         onClick={onReset} 
         style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}
@@ -56,13 +43,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onHistoryClick, historyCount, on
         </div>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <button 
           onClick={onVerifyClick}
           className="btn btn-secondary"
           style={{ padding: '8px 16px', fontSize: '14px', borderRadius: '10px' }}
         >
-          Verify Image
+          <span className="hide-mobile">Verify Image</span>
+          <span className="show-mobile-only">+ Verify</span>
         </button>
 
         <button
@@ -80,7 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onHistoryClick, historyCount, on
           }}
         >
           <History size={16} />
-          <span>History</span>
+          <span className="hide-mobile">History</span>
           {historyCount > 0 && (
             <span style={{
               display: 'inline-flex',
