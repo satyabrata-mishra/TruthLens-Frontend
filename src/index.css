@@ -346,6 +346,39 @@ h1, h2, h3, h4, h5, h6 {
   align-items: stretch;
 }
 
+/* Navbar layout styles */
+.app-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  margin: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 11, 16, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
 @media (max-width: 1024px) {
   .report-main-grid {
     grid-template-columns: 1fr;
@@ -355,6 +388,20 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .report-stats-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .app-navbar {
+    padding: 10px 12px !important;
+    margin: 8px 8px 0 8px !important;
+    gap: 8px !important;
+  }
+  
+  .nav-logo {
+    gap: 6px !important;
+  }
+  
+  .nav-actions {
+    gap: 8px !important;
   }
 }
 
@@ -370,6 +417,15 @@ html, body, #root {
 }
 .show-mobile-only {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  .show-mobile-only {
+    display: inline-block !important;
+  }
 }
 
 /* Features section responsive grid */
@@ -394,17 +450,28 @@ html, body, #root {
   .features-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
+  
+  /* Navbar adjustments for tablet and mobile sizes */
+  .app-navbar {
+    padding: 10px 12px !important;
+    margin: 8px 8px 0 8px !important;
+    gap: 8px !important;
+  }
+  .app-navbar h2 {
+    font-size: 16px !important;
+  }
+  .app-navbar p {
+    display: none !important; /* Hide tagline on mobile */
+  }
+  .app-navbar .btn {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    border-radius: 8px !important;
+  }
 }
 
 /* Mobile Responsiveness Overrides */
 @media (max-width: 480px) {
-  .hide-mobile {
-    display: none !important;
-  }
-  .show-mobile-only {
-    display: inline-block !important;
-  }
-  
   /* Center feature cards content on mobile */
   .features-grid {
     grid-template-columns: 1fr !important;
@@ -429,23 +496,6 @@ html, body, #root {
   h1 {
     font-size: 28px !important;
     margin: 16px 0 !important;
-  }
-  
-  /* Navbar adjustments */
-  nav {
-    padding: 10px 14px !important;
-    margin: 10px 10px 0 10px !important;
-  }
-  nav h2 {
-    font-size: 16px !important;
-  }
-  nav p {
-    display: none !important; /* Hide tagline on mobile */
-  }
-  nav .btn {
-    padding: 6px 10px !important;
-    font-size: 12px !important;
-    border-radius: 8px !important;
   }
   
   /* Heatmap viewer height adjustment */

@@ -13,7 +13,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onHistoryClick, historyCount, on
     <nav className="glass-panel app-navbar">
       <div 
         onClick={onReset} 
-        style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}
+        className="nav-logo"
       >
         <div className="hide-mobile" style={{
           background: 'var(--gradient-primary)',
@@ -33,7 +33,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onHistoryClick, historyCount, on
         </div>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <div className="nav-actions">
         <button 
           onClick={onVerifyClick}
           className="btn btn-secondary"

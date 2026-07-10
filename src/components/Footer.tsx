@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
           Detect deepfakes, inspect neural heatmaps, and secure visual trust instantly.
         </p>
         <p style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '8px' }}>
-          &copy; {new Date().getFullYear()} TruthLens AI. All rights reserved. Powered by Explainable Artificial Intelligence (XAI).
+          &copy; {new Date().getFullYear()} TruthLens AI. Created by Satyabrata Mishra. All rights reserved. Powered by Explainable Artificial Intelligence (XAI).
         </p>
       </div>
     </footer>
