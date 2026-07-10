@@ -15,7 +15,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onHistoryClick, historyCount, on
         onClick={onReset} 
         style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}
       >
-        <div style={{
+        <div className="hide-mobile" style={{
           background: 'var(--gradient-primary)',
           borderRadius: '10px',
           padding: '8px',
@@ -26,18 +26,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onHistoryClick, historyCount, on
           <ShieldCheck size={24} color="#06070a" />
         </div>
         <div>
-          <h2 style={{ fontSize: '20px', fontWeight: 700, margin: 0, display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 700, margin: 0 }}>
             TruthLens
-            <span style={{
-              fontSize: '10px',
-              background: 'rgba(6, 182, 212, 0.15)',
-              color: 'var(--accent-cyan)',
-              padding: '2px 8px',
-              borderRadius: '20px',
-              border: '1px solid rgba(6, 182, 212, 0.3)',
-              fontWeight: 600,
-              letterSpacing: '0.05em'
-            }}>BETA</span>
           </h2>
           <p style={{ fontSize: '11px', color: 'var(--text-secondary)', margin: 0 }}>Verify Every Image</p>
         </div>
