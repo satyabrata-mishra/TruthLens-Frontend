@@ -25,7 +25,7 @@ export const AnalysisModeSelector: React.FC<AnalysisModeSelectorProps> = ({ mode
 
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
         gap: '20px',
         position: 'relative',
       }}>

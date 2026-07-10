@@ -330,16 +330,67 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
+/* Main split screen layout inside report */
+.report-main-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
 /* Responsive side-by-side stats grid inside report screen */
 .report-stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  align-items: start;
+  align-items: stretch;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  .report-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
   .report-stats-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile Responsiveness Overrides */
+@media (max-width: 480px) {
+  /* Reduce container paddings */
+  section, footer, main {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  
+  /* Hero title adjustment */
+  h1 {
+    font-size: 28px !important;
+    margin: 16px 0 !important;
+  }
+  
+  /* Navbar adjustments */
+  nav {
+    padding: 10px 14px !important;
+    margin: 10px 10px 0 10px !important;
+  }
+  nav h2 {
+    font-size: 16px !important;
+  }
+  nav p {
+    display: none !important; /* Hide tagline on mobile */
+  }
+  nav .btn {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    border-radius: 8px !important;
+  }
+  
+  /* Heatmap viewer height adjustment */
+  .heatmap-height-adjust {
+    height: 300px !important;
   }
 }

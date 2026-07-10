@@ -423,7 +423,7 @@ export const HeatmapViewer: React.FC<HeatmapViewerProps> = ({ originalUrl, heatm
       </div>
 
       {/* Main image content viewer */}
-      <div style={{
+      <div className="heatmap-height-adjust" style={{
         height: '420px',
         width: '100%',
         position: 'relative',

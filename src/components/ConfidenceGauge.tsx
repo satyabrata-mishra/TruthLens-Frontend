@@ -57,12 +57,21 @@ export const ConfidenceGauge: React.FC<ConfidenceGaugeProps> = ({ confidence, pr
       alignItems: 'center',
       gap: '16px',
       background: 'rgba(13, 16, 26, 0.4)',
+      height: '100%',
+      boxSizing: 'border-box',
     }}>
       <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--text-secondary)', alignSelf: 'flex-start' }}>
         Prediction Confidence
       </h3>
 
-      <div style={{ position: 'relative', width: '130px', height: '130px' }}>
+      <div style={{
+        flexGrow: 1,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+      }}>
+        <div style={{ position: 'relative', width: '170px', height: '170px' }}>
         <svg width="100%" height="100%" viewBox="0 0 120 120" style={{ transform: 'rotate(-90deg)' }}>
           {/* Background circle track */}
           <circle
@@ -101,7 +110,7 @@ export const ConfidenceGauge: React.FC<ConfidenceGaugeProps> = ({ confidence, pr
           justifyContent: 'center',
         }}>
           <span style={{
-            fontSize: '28px',
+            fontSize: '36px',
             fontWeight: 800,
             color: '#fff',
             fontFamily: 'var(--font-heading)',
@@ -110,7 +119,7 @@ export const ConfidenceGauge: React.FC<ConfidenceGaugeProps> = ({ confidence, pr
             {animatedPercent}%
           </span>
           <span style={{
-            fontSize: '9px',
+            fontSize: '11px',
             color: 'var(--text-muted)',
             fontWeight: 600,
             marginTop: '2px',
@@ -119,6 +128,7 @@ export const ConfidenceGauge: React.FC<ConfidenceGaugeProps> = ({ confidence, pr
             Confidence
           </span>
         </div>
+      </div>
       </div>
 
       <div style={{ textAlign: 'center' }}>

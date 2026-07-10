@@ -338,12 +338,7 @@ function App() {
             </div>
 
             {/* Results Grid Layout */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '24px',
-              alignItems: 'start',
-            }}>
+            <div className="report-main-grid">
               
               {/* Left Column: Heatmap comparison viewer */}
               <div style={{ 
